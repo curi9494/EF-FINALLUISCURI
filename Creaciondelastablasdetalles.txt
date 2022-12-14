@@ -1,0 +1,19 @@
+
+Script de Tabla "reserva_turista":
+
+create table reserva_turista(
+id_turista int NOT NULL,
+id_reserva int NOT NULL,
+FOREIGN KEY(id_reserva ) REFERENCES reserva (id_reserva )  on delete cascade on update cascade,
+FOREIGN KEY(id_turista) REFERENCES turista( id_turista )  on delete cascade on update cascade
+)
+
+
+Script de Tabla "hospedaje_reserva":
+
+create table hospedaje_reserv(
+ 	id_hospedaje int NOT NULL,
+ 	id_reserva int NOT NULL,
+  	FOREIGN KEY(id_hospedaje ) REFERENCES reserva (id_hospedaje )  on delete cascade on update cascade,
+ 	FOREIGN KEY(id_reversa ) REFERENCES reserva( id_reserva )  on delete cascade on update cascade
+ )
